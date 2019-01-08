@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using log4net.Config;
 
 namespace ConsoleApp
 {
@@ -10,29 +13,28 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"请输入数值a：");
+            try
+            {
+                var serviceType = ConfigurationManager.AppSettings["ServiceType"];
+                var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");
+                XmlConfigurator.ConfigureAndWatch(logCfg);
 
-            string stra = Console.ReadLine();
+                IWork work = null;
 
-            int a = Convert.ToInt32(stra);
+                switch (serviceType)
+                {
+                    case "SendMessage":
+                        work = new SendMessage();
+                        break;
+                }
+                work?.DoWork();
 
-            Console.WriteLine($"请输入数值b:");
-
-            string strb = Console.ReadLine();
-
-            int b = Convert.ToInt32(strb);
-
-            int result = AddMethod(a, b);
-
-            Console.WriteLine($"运算结果：{a}+{b}={result}");
-
-
-            Console.ReadKey();
-        }
-
-        public static int AddMethod(int a, int b)
-        {
-            return a + b;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
