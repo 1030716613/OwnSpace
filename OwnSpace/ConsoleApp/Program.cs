@@ -15,7 +15,7 @@ namespace ConsoleApp
         {
             try
             {
-                var serviceType = ConfigurationManager.AppSettings["ServiceType"];
+                string serviceType = ConfigurationManager.AppSettings["ServiceType"];
                 var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");
                 XmlConfigurator.ConfigureAndWatch(logCfg);
 

@@ -13,6 +13,19 @@ namespace ConsoleApp
             const string query = @"SELECT * FROM Student";
 
             var studentList = SqlHelper.Query<Student>(query);
+
+            int i = 0;
+
+            foreach (var student in studentList)
+            {
+                string insert = $@"insert into student (Name,Age,Address,Birthday)
+                              values('{student.Name}+{i}',{student.Age},'{student.Address}','{student.BirthDay}')";
+
+                SqlHelper.Execute(insert);
+
+                i++;
+
+            }
         }
     }
 }
