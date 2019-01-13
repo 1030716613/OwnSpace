@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Own.MVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,16 @@ namespace Own.MVC.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public JsonResult GetStudent()
+        {
+            Student student = new Student();
+
+            student.Age = 20;
+            student.Name = "张三";
+
+            return Json(student,JsonRequestBehavior.AllowGet);
         }
     }
 }
