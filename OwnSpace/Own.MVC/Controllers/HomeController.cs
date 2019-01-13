@@ -28,6 +28,12 @@ namespace Own.MVC.Controllers
             return View();
         }
 
+        public ActionResult Blog()
+        {
+            return View();
+        }
+
+
         public JsonResult GetStudent()
         {
             Student student = new Student();
