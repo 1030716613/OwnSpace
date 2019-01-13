@@ -1,17 +1,88 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<link href="~/Content/Style/test.css" rel="stylesheet" />
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>页面标题</title>
+</head>
+<body style="background-color:#ffffff">
+    @*<h1 class="red-text">这是我的第一个标题</h1>
+        <p style="font-family:Arial;font-size:30px;">这是我的第一个段落。</p>
+        <a href="https://www.baidu.com" target="_blank">百度</a>
+
+        <img src="~/Content/Image/google.png" width="104" height="142" />
+
+        <div>
+            <table border="1" style="height:400px;width:400px">
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Coffee</li>
+                            <li>Milk</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ol>
+                            <li>Coffee</li>
+                            <li>Milk</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td>row 2, cell 1</td>
+                    <td>row 2, cell 2</td>
+                </tr>
+            </table>
+
+        </div>
+    *@
+
+
+    <div id="container" style="width:500px">
+
+        <div id="header" style="background-color:#FFA500;">
+            <h1 style="margin-bottom:0;">Main Title of Web Page</h1>
+        </div>
+
+        <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+            <b>Menu</b><br>
+            HTML<br>
+            CSS<br>
+            JavaScript
+        </div>
+
+        <div id="content" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+            Content goes here
+        </div>
+
+        <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+            Copyright ? W3Cschools.com
+        </div>
+
+    </div>
+    <form>
+        密码: <input type="password" name="firstname"><br>
+        Last name: <input type="text" name="lastname">
+    </form>
+
+    <form>
+        <input type="radio" name="sex" value="male">Male<br>
+        <input type="radio" name="sex" value="female">Female
+    </form>
+
+    <form>
+        <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+        <input type="checkbox" name="vehicle" value="Car">I have a car
+    </form>
+</body>
+</html>
