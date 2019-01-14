@@ -12,3 +12,11 @@
 /OwnSpace/.vs/config
 /OwnSpace/Own.MVC/bin
 /OwnSpace/Own.MVC/obj/Debug
+/OwnSpace/Own.BLL/bin/Debug
+/OwnSpace/Own.BLL/obj/Debug
+/OwnSpace/Own.DAL/bin/Debug
+/OwnSpace/Own.DAL/obj/Debug
+/OwnSpace/Own.Interface/bin/Debug
+/OwnSpace/Own.Interface/obj/Debug
+/OwnSpace/Own.Models/bin/Debug
+/OwnSpace/Own.Models/obj/Debug

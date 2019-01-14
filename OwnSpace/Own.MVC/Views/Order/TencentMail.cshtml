@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+<body style="background-color:violet;">
+    <i><h1 style="background-color:red;">不要问我标题是什么</h1></i>
+    <br />
+    <b><p style="background-color:blue;font-size:50px;font-family:arial;">上面是我家标题</p></b>
+    <br />
+    <ul><li><p>不走心的LoGo</p></li>
+    <br />
+    <img src="~/Content/Image/google.png" " width="200" height="200">
+    <br />
+    <li><a href="http://www.cnki.net/" target="_blank">中国知网</a></li>
+    </ul>
+    <hr>
+    <!--这是一个注释，注释在浏览器中不会显示-->
+    <br />
+    <table border="1">
+        <table>
+            <tr>
+                <td>胖子, Lucky</td>
+                <td>泡芙, Jony</td>
+            </tr>
+            <tr>
+                <td>二狗子, Banana</td>
+                <td>煤球, Make</td>
+            </tr>
+        </table>
+        <br>
+        <ol>
+            <li>
+        <a href="http://www.cnblogs.com/duanshouchang/" target="_blank">博客园</a></li>
+        <br />
+            <li>
+        <a href="https://github.com/1030716613" target="_blank">GitHub</a></li>
+            </ol>
+        <h2>Email:1030716613@qq.com</h2>
+</body>
+
+<hr>
+<body>
+
+    <div id="container" style="width:500px">
+
+        <div id="header" style="background-color:purple;">
+            <h1 style="margin-bottom:0;">一个表格</h1>
+        </div>
+
+        <div id="menu" style="background-color:forestgreen;height:200px;width:100px;float:left;">
+            <b>英短</b><br>
+            折耳<br>
+            金吉拉<br>
+            布偶
+        </div>
+
+        <div id="content" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+            小猫
+        </div>
+
+        <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+            猫咪类别
+        </div>
+
+    </div>
+    <form>
+        品种: <input type="text" name="firstname" readonly><br>
+        价格: <input type="button" name="lastname" value="提交" onclick="">
+        <br />
+        密钥: <input type="password" name="pwd">
+    </form>
+    <p>对猫咪的要求</p>
+    <form>
+        <input type="checkbox" name="vehicle" value="Bike">毛色<br>
+        <input type="checkbox" name="vehicle" value="Car">品种<br>
+        <input type="checkbox" name="vehicle" value="Car">价格
+    </form>
+    <br />
+    <p>是否购买</p>
+    <br />
+    <form>
+        <input type="radio" name="sex" value="male">是<br>
+        <input type="radio" name="sex" value="female">否
+    </form>
+    <form name="input" action="GetName" method="get">
+        地址: <input type="text" name="id">
+        <input type="submit" value="提交">
+    </form>
+</body>
+<script>
+document.write("猫咪交易平台")
+</script>
