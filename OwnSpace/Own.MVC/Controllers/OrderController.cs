@@ -70,7 +70,7 @@ namespace Own.MVC.Controllers
         /// <summary>
         /// 获取用户列表
         /// </summary>
-        public JsonResult GetUserList(int page, int limit)
+        public JsonResult GetUserList(int page, int limit, string userName = null)
         {
             var request = new PageRequestEntity<TestLayui>
             {
@@ -78,9 +78,14 @@ namespace Own.MVC.Controllers
                 PageSize = limit
             };
 
-            var testLayuis = _studentService.GetUserList();
+            var userList = _studentService.GetUserList();
 
-            var result = request.WithPagedItems(testLayuis);
+            if (userName != null)
+            {
+                userList = userList.Where(t => t.UserName.Contains(userName)).ToList();
+            }
+
+            var result = request.WithPagedItems(userList);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
@@ -108,7 +113,7 @@ namespace Own.MVC.Controllers
         {
             int result = _studentService.DeleteUser(id);
 
-            return Json(result,JsonRequestBehavior.AllowGet);
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }
