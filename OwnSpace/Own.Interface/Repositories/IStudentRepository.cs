@@ -24,5 +24,7 @@ namespace Own.Interface.Repositories
         int DeleteUser(int id);
 
         int UpdateUser(UserInfo user);
+
+        int BatchDeleteUsers(List<int> ids);
     }
 }

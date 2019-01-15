@@ -24,7 +24,7 @@ layui.use(['form','layer'],function(){
                 layer.closeAll("iframe");
                 //刷新父页面
                 parent.location.reload();
-            }, 2000);
+            }, 100);
 
          })
        

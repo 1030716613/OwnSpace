@@ -73,5 +73,11 @@ namespace Own.BLL
             int result = _studentRepository.UpdateUser(user);
             return result;
         }
+
+        public int BatchDeleteUsers(List<int> ids)
+        {
+            int result = _studentRepository.BatchDeleteUsers(ids);
+            return result;
+        }
     }
 }

@@ -78,7 +78,7 @@ namespace Own.MVC.Controllers
                 PageSize = limit
             };
 
-            var userList = _studentService.GetUserList();
+            List<UserInfo> userList = _studentService.GetUserList();
 
             if (userName != null)
             {
@@ -118,5 +118,17 @@ namespace Own.MVC.Controllers
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+        /// <summary>
+        /// 批量删除用户
+        /// </summary>
+        [HttpPost]
+        public JsonResult BatchDeleteUsers(List<int> ids)
+        {
+            int result= _studentService.BatchDeleteUsers(ids);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+                     
     }
 }

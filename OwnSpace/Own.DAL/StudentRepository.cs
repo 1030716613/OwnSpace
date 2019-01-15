@@ -133,5 +133,13 @@ namespace Own.DAL
             var ret = SqlHelper.Execute(insertSql, user);
             return ret;
         }
+
+        public int BatchDeleteUsers(List<int> ids)
+        {
+            string insertSql = @"delete from userinfo where id in @ids ";
+
+            var ret = SqlHelper.Execute(insertSql, new { ids });
+            return ret;
+        }
     }
 }
