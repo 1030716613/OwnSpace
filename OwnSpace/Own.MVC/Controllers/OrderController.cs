@@ -108,7 +108,7 @@ namespace Own.MVC.Controllers
         {
             int result = _studentService.DeleteUser(id);
 
-            return Json(result);
+            return Json(result,JsonRequestBehavior.AllowGet);
         }
     }
 }
