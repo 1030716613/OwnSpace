@@ -45,7 +45,7 @@
     <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestLayui.cs" />
-    <Compile Include="Users.cs" />
+    <Compile Include="UserInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
