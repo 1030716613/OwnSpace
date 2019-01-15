@@ -2,6 +2,7 @@
 using Own.Interface.Repositories;
 using Own.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Own.DAL
@@ -69,6 +70,44 @@ namespace Own.DAL
             }
 
             return stu;
+        }
+
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <returns></returns>
+        public List<UserInfo> GetUserList()
+        {
+            string selectSql = "select * from UserInfo ";
+
+            //使用dapper链接数据库，在数据库中查找所有user
+            return SqlHelper.Query<UserInfo>(selectSql);
+        }
+
+        /// <summary>
+        /// 新增用户
+        /// </summary>am>
+        /// <returns></returns>
+        public int AddUser(UserInfo user)
+        {
+            string insertSql = @"
+                                  insert into UserInfo( UserName,
+                                                        UserEmail,
+                                                        UserSex,
+                                                        UserStatus,
+                                                        UserGrade,
+                                                        UserDesc )
+                                                values( @UserName,
+                                                        @UserEmail,
+                                                        @UserSex,
+                                                        @UserStatus,
+                                                        @UserGrade,
+                                                        @UserDesc )
+                                ";
+
+            var ret = SqlHelper.Execute(insertSql,user);
+
+            return ret;
         }
     }
 }

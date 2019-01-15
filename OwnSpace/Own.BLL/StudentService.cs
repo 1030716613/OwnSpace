@@ -47,5 +47,19 @@ namespace Own.BLL
 
             return student;
         }
+
+        public List<UserInfo> GetUserList()
+        {
+            List<UserInfo> users = _studentRepository.GetUserList();
+
+            return users;
+        }
+
+        public int AddUser(UserInfo user)
+        {
+            int result = _studentRepository.AddUser(user);
+
+            return result;
+        }
     }
 }

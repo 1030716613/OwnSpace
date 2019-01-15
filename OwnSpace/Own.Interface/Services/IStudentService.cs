@@ -16,6 +16,10 @@ namespace Own.Interface.Services
         DateTime GetBirthDay(string name);
 
         Student GetStudentInfo(int id);
+
+        List<UserInfo> GetUserList();
+
+        int AddUser(UserInfo user);
     }
   
 }

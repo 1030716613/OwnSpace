@@ -78,23 +78,8 @@ namespace Own.MVC.Controllers
                 PageSize = limit
             };
 
-            var testLayuis = new List<UserInfo>();
+            var testLayuis = _studentService.GetUserList();
 
-            for (var i = 1; i < 100; i++)
-            {
-                var data = new UserInfo()
-                {
-                    Id = i,
-                    UserName = $"张三{i}",
-                    UserEmail = "1037134100@qq.com",
-                    UserSex = "男",
-                    UserStatus = 0,
-                    UserGrade = 0,
-                    UserEndTime = DateTime.Now,
-                    UserDesc = "程序员"
-                };
-                testLayuis.Add(data);
-            }
             var result = request.WithPagedItems(testLayuis);
 
             return Json(result, JsonRequestBehavior.AllowGet);
@@ -106,8 +91,13 @@ namespace Own.MVC.Controllers
         [HttpPost]
         public JsonResult AddUser(UserInfo user)
         {
-            var x = "23";
-            return Json(x);
+            if (user.Id <= 0)
+            {
+                var result = _studentService.AddUser(user);
+                return Json(result);
+            }
+
+            return null;
         }
     }
 }
