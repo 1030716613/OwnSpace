@@ -9,19 +9,16 @@
 
 <script>
 
-    $('#btn').click(function() {
+    $('#btn').click(function () {
 
-        $.ajax(
-            {
-                type: "get",
-                url: "/home/getstudent",
-                success: function (data) {
+        $.ajax({
+            type: "get",
+            url: "/home/getstudent",
+            success: function (data) {
 
-                    alert(data.Name);
-                }
-
-            });
-
+                alert(data.Name);
+            }
+        });
     });
 
 </script>
