@@ -78,17 +78,17 @@ namespace Own.MVC.Controllers
                 PageSize = limit
             };
 
-            var testLayuis = new List<Users>();
+            var testLayuis = new List<UserInfo>();
 
             for (var i = 1; i < 100; i++)
             {
-                var data = new Users()
+                var data = new UserInfo()
                 {
                     Id = i,
                     UserName = $"张三{i}",
                     UserEmail = "1037134100@qq.com",
                     UserSex = "男",
-                    UserStatus = 1,
+                    UserStatus = 0,
                     UserGrade = 0,
                     UserEndTime = DateTime.Now,
                     UserDesc = "程序员"
@@ -104,7 +104,7 @@ namespace Own.MVC.Controllers
         /// 新增用户
         /// </summary>
         [HttpPost]
-        public JsonResult AddUser(Users user)
+        public JsonResult AddUser(UserInfo user)
         {
             var x = "23";
             return Json(x);
