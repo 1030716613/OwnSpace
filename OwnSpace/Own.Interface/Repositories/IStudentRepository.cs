@@ -22,5 +22,7 @@ namespace Own.Interface.Repositories
         int AddUser(UserInfo user);
 
         int DeleteUser(int id);
+
+        int UpdateUser(UserInfo user);
     }
 }

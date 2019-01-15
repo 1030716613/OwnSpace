@@ -118,5 +118,20 @@ namespace Own.DAL
             var ret = SqlHelper.Execute(insertSql, new { id});
             return ret;
         }
+
+        public int UpdateUser(UserInfo user)
+        {
+            string insertSql = @"
+             UPDATE UserInfo SET UserName = @UserName , 
+                                 UserEmail = @UserEmail ,
+                                 UserSex = @UserSex ,
+                                 UserStatus = @UserStatus ,
+                                 UserGrade = @UserGrade ,
+                                 UserDesc = @UserDesc 
+                           WHERE Id = @Id ";
+
+            var ret = SqlHelper.Execute(insertSql, user);
+            return ret;
+        }
     }
 }

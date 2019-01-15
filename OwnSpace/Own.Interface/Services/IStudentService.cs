@@ -22,6 +22,8 @@ namespace Own.Interface.Services
         int AddUser(UserInfo user);
 
         int DeleteUser(int user);
+
+        int UpdateUser(UserInfo user);
     }
   
 }

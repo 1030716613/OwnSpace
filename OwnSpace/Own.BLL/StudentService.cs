@@ -67,5 +67,11 @@ namespace Own.BLL
             int result = _studentRepository.DeleteUser(id);
             return result;
         }
+
+        public int UpdateUser(UserInfo user)
+        {
+            int result = _studentRepository.UpdateUser(user);
+            return result;
+        }
     }
 }

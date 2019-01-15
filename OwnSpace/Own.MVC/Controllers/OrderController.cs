@@ -96,13 +96,16 @@ namespace Own.MVC.Controllers
         [HttpPost]
         public JsonResult AddUser(UserInfo user)
         {
-            if (user.Id <= 0)
+            if (user.Id == 0)
             {
                 var result = _studentService.AddUser(user);
                 return Json(result);
             }
-
-            return null;
+            else
+            {
+                var result = _studentService.UpdateUser(user);
+                return Json(result);
+            }
         }
 
         /// <summary>
