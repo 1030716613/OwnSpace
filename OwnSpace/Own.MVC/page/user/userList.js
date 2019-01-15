@@ -68,7 +68,8 @@ layui.use(['form','layer','table','laytpl'],function(){
             content : "userAdd.html",
             success : function(layero, index){
                 var body = layui.layer.getChildFrame('body', index);
-                if(edit){
+                if (edit) {
+                    body.find(".userId").val(edit.Id);  //登录名
                     body.find(".userName").val(edit.UserName);  //登录名
                     body.find(".userEmail").val(edit.UserEmail);  //邮箱
                     body.find(".userSex input[value="+edit.UserSex+"]").prop("checked","checked");  //性别
