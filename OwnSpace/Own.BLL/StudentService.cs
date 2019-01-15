@@ -61,5 +61,11 @@ namespace Own.BLL
 
             return result;
         }
+
+        public int DeleteUser(int id)
+        {
+            int result = _studentRepository.DeleteUser(id);
+            return result;
+        }
     }
 }

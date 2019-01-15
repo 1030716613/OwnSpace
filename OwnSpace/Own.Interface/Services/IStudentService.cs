@@ -20,6 +20,8 @@ namespace Own.Interface.Services
         List<UserInfo> GetUserList();
 
         int AddUser(UserInfo user);
+
+        int DeleteUser(int user);
     }
   
 }

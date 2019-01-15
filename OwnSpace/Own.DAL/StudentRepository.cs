@@ -109,5 +109,14 @@ namespace Own.DAL
 
             return ret;
         }
+
+        //删除用户
+        public int DeleteUser(int id)
+        {
+            string insertSql = @"delete from userinfo where id = @id ";
+
+            var ret = SqlHelper.Execute(insertSql, new { id});
+            return ret;
+        }
     }
 }

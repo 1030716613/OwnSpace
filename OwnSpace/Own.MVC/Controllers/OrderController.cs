@@ -99,5 +99,16 @@ namespace Own.MVC.Controllers
 
             return null;
         }
+
+        /// <summary>
+        /// 删除用户根据id
+        /// </summary>
+        [HttpGet]
+        public JsonResult DeleteUser(int id)
+        {
+            int result = _studentService.DeleteUser(id);
+
+            return Json(result);
+        }
     }
 }
