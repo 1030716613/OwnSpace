@@ -23,9 +23,7 @@ namespace Own.MVC.App_Start
 
             builder.RegisterType<StudentService>().As<IStudentService>();
 
-
             #endregion
-
 
             #region 注入Repository
 

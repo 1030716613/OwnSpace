@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{65FAADEC-0705-4A6A-A42F-7BEBE9A8F0EA}</ProjectGuid>
+    <ProjectGuid>{0D3F36CA-254B-4F3B-A6D9-B9F2DD5ECF13}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Own.DAL</RootNamespace>
-    <AssemblyName>Own.DAL</AssemblyName>
+    <RootNamespace>Own.Common</RootNamespace>
+    <AssemblyName>Own.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,7 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,22 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StudentRepository.cs" />
+    <Compile Include="DataBaseConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Own.Common\Own.Common.csproj">
-      <Project>{0d3f36ca-254b-4f3b-a6d9-b9f2dd5ecf13}</Project>
-      <Name>Own.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Own.Interface\Own.Interface.csproj">
-      <Project>{5e19325b-6f27-45d4-8149-3ef16d1b8a8b}</Project>
-      <Name>Own.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Own.Models\Own.Models.csproj">
-      <Project>{53b28f60-45eb-4223-b384-517630e2c255}</Project>
-      <Name>Own.Models</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

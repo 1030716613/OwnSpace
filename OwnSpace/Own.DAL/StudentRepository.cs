@@ -1,10 +1,8 @@
-﻿using Own.Interface.Repositories;
+﻿using Own.Common;
+using Own.Interface.Repositories;
 using Own.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Own.DAL
 {
@@ -13,24 +11,13 @@ namespace Own.DAL
     /// </summary>
     public class StudentRepository : IStudentRepository
     {
-
         public string GetStudentName(int id)
         {
-            if (id == 1)
-            {
-                return "张三";
+            string selectSql = "select Name from student where id = @id ";
 
-            }
-            else if (id == 2)
-            {
-                return "JAMES";
-            }
-            else
-            {
-                return "学生不存在";
-            }
+            //使用dapper链接数据库，在数据库中根据学生id查询学生name
+            return SqlHelper.Query<string>(selectSql, new { id }).FirstOrDefault();
         }
-
 
         public int GetStudentAge(int id)
         {

@@ -11,11 +11,11 @@ namespace Own.MVC.Controllers
     public class OrderController : Controller
     {
 
-        private readonly IStudentService _istudentService;
+        private readonly IStudentService _studentService;
 
-        public OrderController(IStudentService istudentService)
+        public OrderController(IStudentService studentService)
         {
-            _istudentService = istudentService;
+            _studentService = studentService;
         }
 
         // GET: Order
@@ -33,14 +33,14 @@ namespace Own.MVC.Controllers
         [HttpGet]
         public JsonResult GetName(int id)
         {
-            var name = _istudentService.GetStudentName(id);
+            var name = _studentService.GetStudentName(id);
 
             return Json(name, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetAge(int id)
         {
-            var age = _istudentService.GetStudentAge(id);
+            var age = _studentService.GetStudentAge(id);
 
             return Json(age, JsonRequestBehavior.AllowGet);
         }
@@ -50,7 +50,7 @@ namespace Own.MVC.Controllers
         /// </summary>
         public JsonResult GetBirthDay(string name)
         {
-            DateTime dt = _istudentService.GetBirthDay(name);
+            DateTime dt = _studentService.GetBirthDay(name);
 
             return Json(dt, JsonRequestBehavior.AllowGet);
         }
@@ -61,7 +61,7 @@ namespace Own.MVC.Controllers
         [HttpGet]
         public JsonResult GetStudentInfo(int id)
         {
-            var student = _istudentService.GetStudentInfo(id);
+            var student = _studentService.GetStudentInfo(id);
 
             return Json(student, JsonRequestBehavior.AllowGet);
         }
