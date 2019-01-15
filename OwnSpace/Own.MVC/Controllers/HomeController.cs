@@ -45,37 +45,6 @@ namespace Own.MVC.Controllers
             return Json(student,JsonRequestBehavior.AllowGet);
         }
 
-        /// <summary>
-        /// Layui获取测试数据
-        /// </summary>
-        public JsonResult GetTestData(int page, int limit)
-        {
-            var request = new PageRequestEntity<TestLayui>
-            {
-                CurrentPage = page,
-                PageSize = limit
-            };
-
-            var testLayuis = new List<Users>();
-        
-            for (var i = 1; i < 100; i++)
-            {
-                var data = new Users()
-                {
-                    Id = i,
-                    UserName = $"张三{i}",
-                    UserEmail = "1037134100@qq.com",
-                    UserSex = "男",
-                    UserStatus = 1,
-                    UserGrade = 0,
-                    UserEndTime = DateTime.Now,
-                    UserDesc = "程序员"
-                };
-                testLayuis.Add(data);
-            }
-            var result = request.WithPagedItems(testLayuis);
-
-            return Json(result, JsonRequestBehavior.AllowGet);
-        }
+      
     }
 }

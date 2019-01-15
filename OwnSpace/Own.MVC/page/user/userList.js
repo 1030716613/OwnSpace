@@ -9,7 +9,7 @@ layui.use(['form','layer','table','laytpl'],function(){
     var tableIns = table.render({
         elem: '#userList',
         //url : '../../json/userList.json',
-        url: '/home/GetTestData/',
+        url: '/Order/GetUserList/',
         cellMinWidth : 95,
         page: true,//开启分页
         height : "full-125",
@@ -24,7 +24,7 @@ layui.use(['form','layer','table','laytpl'],function(){
             }},
             {field: 'UserSex', title: '用户性别', align:'center'},
             {field: 'UserStatus', title: '用户状态',  align:'center',templet:function(d){
-                return d.userStatus == "0" ? "正常使用" : "限制使用";
+                return d.UserStatus == "0" ? "正常使用" : "限制使用";
             }},
             {field: 'UserGrade', title: '用户等级', align:'center',templet:function(d){
                 if (d.UserGrade == "0"){
@@ -69,12 +69,12 @@ layui.use(['form','layer','table','laytpl'],function(){
             success : function(layero, index){
                 var body = layui.layer.getChildFrame('body', index);
                 if(edit){
-                    body.find(".userName").val(edit.userName);  //登录名
-                    body.find(".userEmail").val(edit.userEmail);  //邮箱
-                    body.find(".userSex input[value="+edit.userSex+"]").prop("checked","checked");  //性别
-                    body.find(".userGrade").val(edit.userGrade);  //会员等级
-                    body.find(".userStatus").val(edit.userStatus);    //用户状态
-                    body.find(".userDesc").text(edit.userDesc);    //用户简介
+                    body.find(".userName").val(edit.UserName);  //登录名
+                    body.find(".userEmail").val(edit.UserEmail);  //邮箱
+                    body.find(".userSex input[value="+edit.UserSex+"]").prop("checked","checked");  //性别
+                    body.find(".userGrade").val(edit.UserGrade);  //会员等级
+                    body.find(".userStatus").val(edit.UserStatus);    //用户状态
+                    body.find(".userDesc").text(edit.UserDesc);    //用户简介
                     form.render();
                 }
                 setTimeout(function(){
