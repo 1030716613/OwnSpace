@@ -23,3 +23,11 @@
 /obj/Debug
 /OwnSpace/Own.Common/bin/Debug
 /OwnSpace/Own.Common/obj/Debug
+/OwnSpace/Own.MVC/obj/Release
+/OwnSpace/ConsoleApp/obj/Release
+/OwnSpace/ConsoleApp2/obj/Release
+/OwnSpace/Own.BLL
+/OwnSpace/Own.Common
+/OwnSpace/Own.DAL
+/OwnSpace/Own.Interface
+/OwnSpace/Own.Models
