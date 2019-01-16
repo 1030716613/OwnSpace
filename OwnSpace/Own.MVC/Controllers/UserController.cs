@@ -9,17 +9,17 @@ using Own.Models;
 
 namespace Own.MVC.Controllers
 {
-    public class OrderController : Controller
+    public class UserController : Controller
     {
 
-        private readonly IStudentService _studentService;
+        private readonly IUserService _userService;
 
-        public OrderController(IStudentService studentService)
+        public UserController(IUserService userService)
         {
-            _studentService = studentService;
+            _userService = userService;
         }
 
-        // GET: Order
+        // GET: User
         public ActionResult Index()
         {
             return View();
@@ -30,13 +30,13 @@ namespace Own.MVC.Controllers
         /// </summary>
         public JsonResult GetUserList(int page, int limit, string userName = null)
         {
-            var request = new PageRequestEntity<TestLayui>
+            var request = new PageRequestEntity<string>
             {
                 CurrentPage = page,
                 PageSize = limit
             };
 
-            List<UserInfo> userList = _studentService.GetUserList();
+            List<UserInfo> userList = _userService.GetUserList();
 
             if (userName != null)
             {
@@ -56,12 +56,12 @@ namespace Own.MVC.Controllers
         {
             if (user.Id == 0)
             {
-                var result = _studentService.AddUser(user);
+                var result = _userService.AddUser(user);
                 return Json(result);
             }
             else
             {
-                var result = _studentService.UpdateUser(user);
+                var result = _userService.UpdateUser(user);
                 return Json(result);
             }
         }
@@ -72,7 +72,7 @@ namespace Own.MVC.Controllers
         [HttpGet]
         public JsonResult DeleteUser(int id)
         {
-            int result = _studentService.DeleteUser(id);
+            int result = _userService.DeleteUser(id);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
@@ -83,7 +83,7 @@ namespace Own.MVC.Controllers
         [HttpPost]
         public JsonResult BatchDeleteUsers(List<int> ids)
         {
-            int result = _studentService.BatchDeleteUsers(ids);
+            int result = _userService.BatchDeleteUsers(ids);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }

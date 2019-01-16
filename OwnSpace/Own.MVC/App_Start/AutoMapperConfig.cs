@@ -5,6 +5,7 @@ namespace Own.MVC
 {
     public class AutoMapperConfig
     {
+        private const string None = "--";
         private static volatile bool _mappedBefore;
         private static readonly object _lock = new object();
 

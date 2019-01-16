@@ -13,44 +13,45 @@ namespace Own.BLL
     /// <summary>
     /// 业务逻辑层
     /// </summary>
-    public class StudentService: IStudentService
+    public class UserService: IUserService
     {
-        private readonly IUserRepository _studentRepository;
+        private readonly IUserRepository _userRepository;
 
-        public StudentService(IUserRepository studentRepository)
+        //构造函数
+        public UserService(IUserRepository userRepository)
         {
-            _studentRepository = studentRepository;
+            _userRepository = userRepository;
         }
 
         public List<UserInfo> GetUserList()
         {
-            List<UserInfo> users = _studentRepository.GetUserList();
+            List<UserInfo> users = _userRepository.GetUserList();
 
             return users;
         }
 
         public int AddUser(UserInfo user)
         {
-            int result = _studentRepository.AddUser(user);
+            int result = _userRepository.AddUser(user);
 
             return result;
         }
 
         public int DeleteUser(int id)
         {
-            int result = _studentRepository.DeleteUser(id);
+            int result = _userRepository.DeleteUser(id);
             return result;
         }
 
         public int UpdateUser(UserInfo user)
         {
-            int result = _studentRepository.UpdateUser(user);
+            int result = _userRepository.UpdateUser(user);
             return result;
         }
 
         public int BatchDeleteUsers(List<int> ids)
         {
-            int result = _studentRepository.BatchDeleteUsers(ids);
+            int result = _userRepository.BatchDeleteUsers(ids);
             return result;
         }
     }

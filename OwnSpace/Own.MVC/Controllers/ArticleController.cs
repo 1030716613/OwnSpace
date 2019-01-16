@@ -68,7 +68,7 @@ namespace Own.MVC.Controllers
         public JsonResult GetArticleList()
         {
             int page = 1; int limit=20; string articleName = null;
-            var request = new PageRequestEntity<TestLayui>
+            var request = new PageRequestEntity<string>
             {
                 CurrentPage = page,
                 PageSize = limit

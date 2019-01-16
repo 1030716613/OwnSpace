@@ -9,7 +9,7 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
     var tableIns = table.render({
         elem: '#userList',
         //url : '../../json/userList.json',
-        url: '/Order/GetUserList/',
+        url: '/User/GetUserList/',
         cellMinWidth: 95,
         page: true,//开启分页
         height: "full-125",
@@ -114,7 +114,7 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
                 ids.push(data[i].Id);
             }
             layer.confirm('确定删除选中的用户？', { icon: 3, title: '提示信息' }, function (index) {
-                $.post("/Order/BatchDeleteUsers", {
+                $.post("/User/BatchDeleteUsers", {
                     ids: ids  //将需要删除的Id作为参数传入
                 }, function (data) {
                     top.layer.msg("批量删除成功！");
@@ -156,7 +156,7 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
             });
         } else if (layEvent === 'del') { //删除
             layer.confirm('确定删除此用户？', { icon: 3, title: '提示信息' }, function (index) {
-                $.get("/Order/DeleteUser", {
+                $.get("/User/DeleteUser", {
                     id: data.Id  //将需要删除的newsId作为参数传入
                 }, function (data) {
                     top.layer.msg("删除成功！");
