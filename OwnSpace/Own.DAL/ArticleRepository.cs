@@ -20,7 +20,7 @@ namespace Own.DAL
                                   NewsStatus,
                                   NewsImg,
                                   NewsLook ,
-            					  NewTop,
+            					  NewsTop,
             					  NewsTime,
             					  Content,
             					  NewsUrl
@@ -31,7 +31,7 @@ namespace Own.DAL
                                   @NewsStatus,
                                   @NewsImg,
                                   @NewsLook ,
-            					  @NewTop,
+            					  @NewsTop,
             					  @NewsTime,
             					  @Content,
             					  @NewsUrl
@@ -71,10 +71,5 @@ namespace Own.DAL
             var ret = SqlHelper.Execute(insertSql, new { ids });
             return ret;
         }
-
-
-
     }
-
-
 }

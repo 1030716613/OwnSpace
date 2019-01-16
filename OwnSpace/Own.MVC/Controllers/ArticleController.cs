@@ -29,45 +29,29 @@ namespace Own.MVC.Controllers
         /// <summary>
         /// 增加文章
         /// </summary>
-        [HttpGet]
-        public JsonResult AddArticle()
+        [HttpPost]
+        public JsonResult AddArticle(Article article)
         {
-            //初始化假数据，代替前台传过来的数据
-            Article article = new Article
-            {
-                NewsName = "css3用transition实现边框动画效果",
-                NewsAuthor = "守长",
-                Abstract = "这是摘要",
-                NewsStatus = 1,
-                NewsImg = "../../images/userface1.jpg",
-                NewsLook = "开放浏览",
-                NewTop = "",
-                NewsTime = DateTime.Now,
-                Content = "zheshi neirong",
-                NewsUrl = "www.baidu.com"
-            };
-
+            article.NewsAuthor = "守长";
             if (article.Id == 0)
             {
                 var result = _articleService.AddArticle(article);
-                return Json(result,JsonRequestBehavior.AllowGet);
+                return Json(result, JsonRequestBehavior.AllowGet);
             }
             else
             {
                 //var result = _articleService.UpdateArticle(article);
                 //return Json(result);
+                return null;
             }
-            return null;
-
         }
 
         /// <summary>
         /// 获取文章列表
         /// </summary>
         [HttpGet]
-        public JsonResult GetArticleList()
+        public JsonResult GetArticleList(int page, int limit, string articleName = null)
         {
-            int page = 1; int limit=20; string articleName = null;
             var request = new PageRequestEntity<string>
             {
                 CurrentPage = page,

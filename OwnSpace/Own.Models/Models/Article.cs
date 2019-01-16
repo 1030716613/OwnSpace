@@ -28,7 +28,7 @@ namespace Own.Models
         public int NewsStatus { get; set; }
         public string NewsImg { get; set; }
         public string NewsLook { get; set; }
-        public string NewTop { get; set; }
+        public string NewsTop { get; set; }
         public DateTime NewsTime { get; set; }
         public string Content { get; set; }
         public string NewsUrl { get; set; }
