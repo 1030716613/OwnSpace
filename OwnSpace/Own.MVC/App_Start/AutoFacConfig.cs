@@ -22,12 +22,14 @@ namespace Own.MVC.App_Start
             #region 注入service
 
             builder.RegisterType<StudentService>().As<IStudentService>();
+            builder.RegisterType<ArticleService>().As<IArticleService>();
 
             #endregion
 
             #region 注入Repository
 
             builder.RegisterType<StudentRepository>().As<IStudentRepository>();
+            builder.RegisterType<ArticleRepository>().As<IArticleRepository>();
 
             #endregion
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Own.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Own.Interface.Repositories
 {
     public interface IArticleRepository
     {
-        int AddArticle(ArticleInfo Article);
+        int AddArticle(Article article);
+        List<Article> GetArticleList();
     }
 }

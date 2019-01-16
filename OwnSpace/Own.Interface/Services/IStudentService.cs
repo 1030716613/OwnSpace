@@ -26,6 +26,8 @@ namespace Own.Interface.Services
         int UpdateUser(UserInfo user);
 
         int BatchDeleteUsers(List<int> ids);
+
+    
     }
   
 }

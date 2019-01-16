@@ -125,10 +125,9 @@ namespace Own.MVC.Controllers
         [HttpPost]
         public JsonResult BatchDeleteUsers(List<int> ids)
         {
-            int result= _studentService.BatchDeleteUsers(ids);
+            int result = _studentService.BatchDeleteUsers(ids);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-                     
     }
 }
