@@ -46,5 +46,12 @@ namespace Own.BLL
             int result = _articleRepository.BatchDeleteArticles(ids);
             return result;
         }
+
+        public int UpdateArticle(Article article)
+        {
+            int result = _articleRepository.UpdateArticle(article);
+
+            return result;
+        }
     }
 }

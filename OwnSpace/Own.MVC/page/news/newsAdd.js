@@ -71,6 +71,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
         var index = top.layer.msg('数据提交中，请稍候', { icon: 16, time: false, shade: 0.8 });
         // 实际使用时的提交信息
         $.post("/Article/AddArticle", {
+            Id: $(".newsId").val(),  //Id
             NewsName: $(".newsName").val(),  //文章标题
             Abstract: $(".abstract").val(),  //文章摘要
             Content: layedit.getContent(editIndex).split('<audio controls="controls" style="display: none;"></audio>')[0],  //文章内容

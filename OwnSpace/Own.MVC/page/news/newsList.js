@@ -72,13 +72,14 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
             success: function (layero, index) {
                 var body = layui.layer.getChildFrame('body', index);
                 if (edit) {
-                    body.find(".newsName").val(edit.newsName);
-                    body.find(".abstract").val(edit.abstract);
-                    body.find(".thumbImg").attr("src", edit.newsImg);
-                    body.find("#news_content").val(edit.content);
-                    body.find(".newsStatus select").val(edit.newsStatus);
-                    body.find(".openness input[name='openness'][title='" + edit.newsLook + "']").prop("checked", "checked");
-                    body.find(".newsTop input[name='newsTop']").prop("checked", edit.newsTop);
+                    body.find(".newsId").val(edit.Id);  //新闻Id
+                    body.find(".newsName").val(edit.NewsName);
+                    body.find(".abstract").val(edit.Abstract);
+                    body.find(".thumbImg").attr("src", edit.NewsImg);
+                    body.find("#news_content").val(edit.Content);
+                    body.find(".newsStatus select").val(edit.NewsStatus);
+                    body.find(".openness input[name='openness'][title='" + edit.NewsLook + "']").prop("checked", "checked");
+                    body.find(".newsTop input[name='newsTop']").prop("checked", edit.NewsTop);
                     form.render();
                 }
                 setTimeout(function () {

@@ -36,7 +36,7 @@ namespace Own.MVC
                 config.CreateMap<decimal, string>().ConvertUsing(src => src.ToString("N2"));
                 config.CreateMap<decimal?, string>().ConvertUsing(src => src.HasValue ? src.Value.ToString("N2") : None);
                 config.CreateMap<double?, string>().ConvertUsing(src => src.HasValue ? src.Value.ToString("N2") : None);
-                config.CreateMap<DateTime, string>().ConvertUsing(src => src.ToString("yyyy-MM-dd"));
+                config.CreateMap<DateTime, string>().ConvertUsing(src => src.ToString("yyyy-MM-dd HH:mm"));
                 config.CreateMap<DateTime?, string>().ConvertUsing(src => src.HasValue ? src.Value.ToString("yyyy-MM-dd") : None);
 
                 #endregion

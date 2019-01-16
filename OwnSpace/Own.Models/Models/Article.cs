@@ -15,13 +15,9 @@ namespace Own.Models
         /// 文章Id
         /// </summary>
         public int Id { get; set; }
-
-        /// <summary>
-        /// 等下把这些实体加上对应的注释
-        /// </summary>
         public string NewsName { get; set; }
         /// <summary>
-        /// 
+        /// 文章作者
         /// </summary>
         public string NewsAuthor { get; set; }
         public string Abstract { get; set; }
@@ -32,6 +28,5 @@ namespace Own.Models
         public DateTime NewsTime { get; set; }
         public string Content { get; set; }
         public string NewsUrl { get; set; }
-        public object ArticleName { get; set; }
     }
 }

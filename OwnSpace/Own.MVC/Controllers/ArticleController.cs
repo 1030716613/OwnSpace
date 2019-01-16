@@ -40,9 +40,8 @@ namespace Own.MVC.Controllers
             }
             else
             {
-                //var result = _articleService.UpdateArticle(article);
-                //return Json(result);
-                return null;
+                int result = _articleService.UpdateArticle(article);
+                return Json(result);
             }
         }
 
@@ -65,7 +64,9 @@ namespace Own.MVC.Controllers
                 articleList = articleList.Where(t => t.NewsName.Contains(articleName)).ToList();
             }
 
-            var result = request.WithPagedItems(articleList);
+            var viewModels = AutoMapper.Mapper.Map<List<Article>, List<ArticleViewModel>>(articleList);
+
+            var result = request.WithPagedItems(viewModels);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }

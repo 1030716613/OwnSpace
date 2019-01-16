@@ -14,7 +14,7 @@ namespace Own.DAL
         public int AddArticle(Article article)
         {
             string insertSql = @"
-            insert into Article(  NewsName,
+            INSERT INTO Article(  NewsName,
                                   NewsAuthor,
                                   Abstract,
                                   NewsStatus,
@@ -25,7 +25,7 @@ namespace Own.DAL
             					  Content,
             					  NewsUrl
             					  )
-                        values  ( @NewsName,
+                        VALUES  ( @NewsName,
                                   @NewsAuthor,
                                   @Abstract,
                                   @NewsStatus,
@@ -44,7 +44,7 @@ namespace Own.DAL
 
         public List<Article> GetArticleList()
         {
-            string selectSql = "select * from Article ";
+            string selectSql = "SELECT * FROM Article ";
 
             //使用dapper链接数据库，在数据库中查找所有user
             return SqlHelper.Query<Article>(selectSql);
@@ -55,7 +55,7 @@ namespace Own.DAL
         /// </summary>
         public int DeleteArticle(int id)
         {
-            string insertSql = @"delete from article where id = @id ";
+            string insertSql = @"DELETE FROM Article WHERE Id = @id ";
 
             var ret = SqlHelper.Execute(insertSql, new { id });
             return ret;
@@ -66,9 +66,29 @@ namespace Own.DAL
         /// </summary>
         public int BatchDeleteArticles(List<int> ids)
         {
-            string insertSql = @"delete from article where id in @ids ";
+            string insertSql = @"DELETE FROM Article WHERE Id in @ids ";
 
             var ret = SqlHelper.Execute(insertSql, new { ids });
+            return ret;
+        }
+
+        public int UpdateArticle(Article article)
+        {
+            string updateSql = @"
+            UPDATE  Article  SET  NewsName = @NewsName,
+                                  NewsAuthor = @NewsAuthor,
+                                  Abstract = @Abstract,
+                                  NewsStatus = @NewsStatus,
+                                  NewsImg = @NewsImg,
+                                  NewsLook = @NewsLook ,
+            					  NewsTop = @NewsTop,
+            					  NewsTime = @NewsTime,
+            					  Content = @Content,
+            					  NewsUrl = @NewsUrl
+                           WHERE  Id = @Id ";
+
+            var ret = SqlHelper.Execute(updateSql, article);
+
             return ret;
         }
     }
