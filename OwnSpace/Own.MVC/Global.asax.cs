@@ -13,12 +13,15 @@ namespace Own.MVC
     {
         protected void Application_Start()
         {
-            //autofac依赖注入
+            //Autofac依赖注入
             AutofacConfig.Register();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //AutoMapper静态方法初始化
+            AutoMapperConfig.InitMappings();
         }
     }
 }
