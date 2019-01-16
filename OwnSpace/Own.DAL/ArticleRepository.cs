@@ -49,6 +49,31 @@ namespace Own.DAL
             //使用dapper链接数据库，在数据库中查找所有user
             return SqlHelper.Query<Article>(selectSql);
         }
+
+        /// <summary>
+        /// 删除文章
+        /// </summary>
+        public int DeleteArticle(int id)
+        {
+            string insertSql = @"delete from article where id = @id ";
+
+            var ret = SqlHelper.Execute(insertSql, new { id });
+            return ret;
+        }
+
+        /// <summary>
+        /// 批量删除文章
+        /// </summary>
+        public int BatchDeleteArticles(List<int> ids)
+        {
+            string insertSql = @"delete from article where id in @ids ";
+
+            var ret = SqlHelper.Execute(insertSql, new { ids });
+            return ret;
+        }
+
+
+
     }
 
 

@@ -22,32 +22,6 @@ namespace Own.BLL
             _studentRepository = studentRepository;
         }
 
-        public string GetStudentName(int id)
-        {
-            var name = _studentRepository.GetStudentName(id);
-            return name;
-        }
-         
-        public int GetStudentAge(int id)
-        {
-            int age = _studentRepository.GetStudentAge(id);
-            return age;
-        }
-
-        public DateTime GetBirthDay(string name)
-        {
-            DateTime dt = _studentRepository.GetBirthDay(name);
-
-            return dt;
-        }
-
-        public Student GetStudentInfo(int id)
-        {
-            Student student = _studentRepository.GetStudentInfo(id);
-
-            return student;
-        }
-
         public List<UserInfo> GetUserList()
         {
             List<UserInfo> users = _studentRepository.GetUserList();

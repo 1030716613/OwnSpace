@@ -28,16 +28,23 @@ namespace Own.BLL
             return ret;
         }
 
-        public int DeleteArticle(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Article> GetArticleList()
         {
             List<Article> articles = _articleRepository.GetArticleList();
 
             return articles;
+        }
+
+        public int DeleteArticle(int id)
+        {
+            int result = _articleRepository.DeleteArticle(id);
+            return result;
+        }
+
+        public int BatchDeleteArticles(List<int> ids)
+        {
+            int result = _articleRepository.BatchDeleteArticles(ids);
+            return result;
         }
     }
 }

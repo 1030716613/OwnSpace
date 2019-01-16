@@ -9,14 +9,6 @@ namespace Own.Interface.Services
 {
     public interface IStudentService
     {
-        int GetStudentAge(int id);
-
-        string GetStudentName(int id);
-
-        DateTime GetBirthDay(string name);
-
-        Student GetStudentInfo(int id);
-
         List<UserInfo> GetUserList();
 
         int AddUser(UserInfo user);
@@ -26,8 +18,5 @@ namespace Own.Interface.Services
         int UpdateUser(UserInfo user);
 
         int BatchDeleteUsers(List<int> ids);
-
-    
     }
-  
 }

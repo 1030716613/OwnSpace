@@ -11,5 +11,7 @@ namespace Own.Interface.Repositories
     {
         int AddArticle(Article article);
         List<Article> GetArticleList();
+        int DeleteArticle(int id);
+        int BatchDeleteArticles(List<int> ids);
     }
 }

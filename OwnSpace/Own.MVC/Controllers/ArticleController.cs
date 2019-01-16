@@ -90,9 +90,20 @@ namespace Own.MVC.Controllers
         /// 删除文章根据id
         /// </summary>
         [HttpGet]
-        public JsonResult DeleteUser(int id)
+        public JsonResult DeleteArticle(int id)
         {
             int result = _articleService.DeleteArticle(id);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// 批量删除文章
+        /// </summary>
+        [HttpPost]
+        public JsonResult BatchDeleteArticles(List<int> ids)
+        {
+            int result = _articleService.BatchDeleteArticles(ids);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
