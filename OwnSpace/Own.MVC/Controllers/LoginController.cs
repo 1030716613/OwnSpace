@@ -32,7 +32,5 @@ namespace Own.MVC.Controllers
         public string Name { get; set; }
 
         public string PassWord { get; set; }
-
-        public string Code { get; set; }
     }
 }
