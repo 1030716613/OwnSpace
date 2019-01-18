@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Own.Models.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,12 +26,5 @@ namespace Own.MVC.Controllers
 
             return Json(new { Status = "false", MsgData = "用户名或密码不正确。" });
         }
-    }
-
-    public class Login
-    {
-        public string Name { get; set; }
-
-        public string PassWord { get; set; }
     }
 }
