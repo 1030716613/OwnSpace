@@ -38,12 +38,7 @@ namespace ConsoleApp2
             Console.ReadKey();
         }
 
-        //这里写一个加法方法 当然你可以实现很多种算法
-        //这个方法需要两个int 型的入参，返回值也是个int
-        public static int AddMethod(int a,int b)
-        {
-            return a + b;
-        }
+     
 
     }
 }
