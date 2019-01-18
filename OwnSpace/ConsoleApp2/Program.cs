@@ -29,16 +29,13 @@ namespace ConsoleApp2
             //把string 转为int
             int b = Convert.ToInt32(strb);
 
-            //调用addmethod方法  按f11进入到这个方法
-            int result = AddMethod(a,b);
+            ////调用addmethod方法  按f11进入到这个方法
+            //int result = AddMethod(a,b);
 
-            Console.WriteLine($"运算：{a}+{b}={result}");
+            //Console.WriteLine($"运算：{a}+{b}={result}");
 
 
             Console.ReadKey();
         }
-
-     
-
     }
 }
