@@ -254,28 +254,123 @@ namespace DashBorad
     //}
     #endregion
 
-    public class program
-    {
+    #region 接口  // 语义： 能做什么
 
 
-        public static void Main(string[] args)
-        {
+    //public class Program
+    //{
+    //    public static void IWantFly(IFly fly)
+    //    {
+    //        fly.Fly();    //fly  是接口   Fly  是方法
 
+    //    }
 
-            //有空就提交，
-
-
-
-            Console.Read();
-        }
-
-
-
-
-    }
+    //    public static void Main(string[] args)
+    //    {
+    //        IWantFly(new Dove("小白"));
 
 
 
 
 
+    //        Console.Read();
+    //    }
+
+
+    //}
+
+
+    //public interface IFly
+    //{
+    //    void Fly();
+    //}
+
+    //public abstract class Vehicle
+    //{
+
+    //}
+
+    //public class Plane : Vehicle, IFly
+    //{
+    //    public void Fly()
+    //    {
+    //        Console.WriteLine("飞机在飞");
+    //    }
+    //}
+    //public class Car : Vehicle
+    //{
+
+    //}
+    //public abstract class Animal
+    //{
+    //    public Animal(string name)
+    //    {
+    //        this.Name = name;
+    //    }
+    //    public string Name { get; set; }
+
+    //    public abstract void Shout();
+
+    //}
+
+    //public class Dog : Animal
+    //{
+    //    public Dog(string name) : base(name) { }
+
+    //    public override void Shout()
+    //    {
+    //        Console.WriteLine("{0}:汪汪", base.Name);
+    //    }
+    //    //public override void Fly()
+    //    //{
+    //    //    // throw new NotImplementedException();
+    //    //    Console.WriteLine("I can not fly !");
+    //    //}
+    //}
+
+    //public class Cat : Animal
+    //{
+    //    public Cat(string name) : base(name) { }
+
+    //    public override void Shout()
+    //    {
+    //        Console.WriteLine("{0}:喵喵", base.Name);
+    //    }
+    //    //public override void Fly()
+    //    //{
+    //    //    // throw new NotImplementedException(); 
+    //    //    Console.WriteLine("I can not fly !");
+    //    //}
+    //}
+    //public class Duck : Animal,IFly
+    //{
+    //    public Duck(string name) : base(name) { }
+
+    //    public void Fly()
+    //    {
+    //        Console.WriteLine("I can fly !");
+    //    }
+
+    //    public override void Shout()
+    //    {
+    //        Console.WriteLine("{0}:嘎嘎", base.Name);
+    //    }
+
+    //}
+    //public class Dove : Animal,IFly
+    //{
+    //    public Dove(string name) : base(name) { }
+
+    //    public void Fly()
+    //    {
+    //        Console.WriteLine("{0}   我在飞", base.Name);
+    //    }
+
+    //    public override void Shout()
+    //    {
+    //        Console.WriteLine("{0}:咕咕", base.Name);
+    //    }
+ 
+    //}
+    #endregion
 }
