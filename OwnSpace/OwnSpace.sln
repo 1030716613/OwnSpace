@@ -19,7 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Own.Interface", "Own.Interf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Own.Common", "Own.Common\Own.Common.csproj", "{0D3F36CA-254B-4F3B-A6D9-B9F2DD5ECF13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cshapetest", "Cshapetest\Cshapetest.csproj", "{B7FBEB52-E797-45E4-9F35-A7A5789BD1B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cshapetest    test1", "Cshapetest\Cshapetest    test1.csproj", "{B7FBEB52-E797-45E4-9F35-A7A5789BD1B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashBorad   test2", "DashBorad\DashBorad   test2.csproj", "{3197DE8D-0684-404A-9C13-FF9D652EC43A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{B7FBEB52-E797-45E4-9F35-A7A5789BD1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7FBEB52-E797-45E4-9F35-A7A5789BD1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7FBEB52-E797-45E4-9F35-A7A5789BD1B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3197DE8D-0684-404A-9C13-FF9D652EC43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3197DE8D-0684-404A-9C13-FF9D652EC43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3197DE8D-0684-404A-9C13-FF9D652EC43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3197DE8D-0684-404A-9C13-FF9D652EC43A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
