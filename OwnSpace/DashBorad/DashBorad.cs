@@ -253,7 +253,6 @@ namespace DashBorad
     //    public MercenaryBlood mercenaryBlood = new MercenaryBlood();
     //}
     #endregion
-
     #region 接口  // 语义： 能做什么
 
 
@@ -370,7 +369,109 @@ namespace DashBorad
     //    {
     //        Console.WriteLine("{0}:咕咕", base.Name);
     //    }
- 
+
     //}
     #endregion
+    #region 比较
+
+    //public class Proogram
+    //{
+
+    //    public static void Main(string[] args)
+    //    {
+    //        Console.WriteLine(Max(new List<int>() { 1,2,3,4,5},ReturnValue.min));
+
+    //        Console.ReadLine();
+    //    }
+
+    //    public static int Max(List<int> nums, ReturnValue retType)
+    //    {
+    //        int value = nums[0];
+    //        foreach (var num in nums)
+    //        {
+    //            switch (retType)
+    //            {
+    //                case ReturnValue.max:
+    //                    if (num > value)
+    //                    {
+    //                        value = num;
+    //                    }
+    //                    break;
+
+    //                case ReturnValue.min:
+    //                    if (num < value)
+    //                    {
+    //                        value = num;
+    //                    }
+    //                    break;
+
+    //            }
+    //        }
+    //        return value;
+    //    }
+
+    //    public enum ReturnValue
+    //    {
+    //        max,
+    //        min,
+    //    }
+    //}
+
+    #endregion
+
+
+
+    public class Proogram
+    {
+
+        public static void Main(string[] args)
+        {
+            var list = Traverse(new List<int > { 17,2,37,4,59,656,7,8,967,0},IsEven);
+
+            foreach (var n in list)
+            {
+                Console.WriteLine(n);
+            }
+
+            Console.WriteLine();
+
+            Console.ReadLine();
+        }
+
+        public delegate bool Function(int num );  // 委托     定义形式
+
+        public static Function BiggerThan10 = delegate (int n) { return n >= 10; };  //取大于10 的数
+
+        public static Function IsEven = delegate (int n) { return n%2==0; };        //取偶数
+
+        public static List<int>  Traverse(List<int> nums,Function function)   //封闭
+        {
+            var list = new List<int>();
+
+            foreach (var num in nums)
+            {
+                if (function(num))   //委托
+                {
+                    list.Add(num);
+                }
+            }
+            return list;
+        }
+
+
+    }
+
+
+
+
+    //public class Proogram
+    //{
+
+    //    public static void Main(string[] args)
+    //    {
+
+    //    }
+
+    //}
+
 }
