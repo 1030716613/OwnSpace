@@ -418,60 +418,113 @@ namespace DashBorad
     //}
 
     #endregion
-
-
-
-    public class Proogram
-    {
-
-        public static void Main(string[] args)
-        {
-            var list = Traverse(new List<int > { 17,2,37,4,59,656,7,8,967,0},IsEven);
-
-            foreach (var n in list)
-            {
-                Console.WriteLine(n);
-            }
-
-            Console.WriteLine();
-
-            Console.ReadLine();
-        }
-
-        public delegate bool Function(int num );  // 委托     定义形式
-
-        public static Function BiggerThan10 = delegate (int n) { return n >= 10; };  //取大于10 的数
-
-        public static Function IsEven = delegate (int n) { return n%2==0; };        //取偶数
-
-        public static List<int>  Traverse(List<int> nums,Function function)   //封闭
-        {
-            var list = new List<int>();
-
-            foreach (var num in nums)
-            {
-                if (function(num))   //委托
-                {
-                    list.Add(num);
-                }
-            }
-            return list;
-        }
-
-
-    }
-
-
-
+    #region 委托
 
     //public class Proogram
     //{
 
     //    public static void Main(string[] args)
     //    {
+    //        var list = Traverse(new List<int > { 17,2,37,4,59,656,7,8,967,0},IsEven);
 
+    //        foreach (var n in list)
+    //        {
+    //            Console.WriteLine(n);
+    //        }
+
+    //        Console.WriteLine();
+
+    //        Console.ReadLine();
     //    }
 
+    //    public delegate bool Function(int num );  // 委托     定义形式
+
+    //    public static Function BiggerThan10 = delegate (int n) { return n >= 10; };  //取大于10 的数
+
+    //    public static Function IsEven = delegate (int n) { return n%2==0; };        //取偶数
+
+    //    public static List<int>  Traverse(List<int> nums,Function function)   //封闭
+    //    {
+    //        var list = new List<int>();
+
+    //        foreach (var num in nums)
+    //        {
+    //            if (function(num))   //委托
+    //            {
+    //                list.Add(num);
+    //            }
+    //        }
+    //        return list;
+    //    }
+
+
     //}
+
+    #endregion
+
+    //多波委托
+
+    public class Proogram
+    {
+
+        public static void Main(string[] args) 
+        {
+            var publisher = new Publisher("出版社x");
+            publisher.Persons.Add(new Person("a"));
+            publisher.Persons.Add(new Person("b"));
+            publisher.Persons.Add(new Person("c"));
+
+            publisher.SendNewsPaper(new NewsPaper() { Title="标题",Content="内容"});
+            
+            Console.ReadLine();
+        }
+
+
+    }
+    public class Person
+    {
+        public string Name{get; set;}
+
+        public Person(string name)
+        {
+            this.Name = name;
+        }
+        public NewsPaper NewsPaper { get; set; }
+
+        public void GetNewsPaper(NewsPaper newsPaper)
+        {
+            this.NewsPaper = newsPaper;
+        }
+
+
+    }
+
+   
+
+    public class Publisher
+    {
+        public string Name { get; set; }
+
+        public Publisher(string name)
+        {
+            this.Name = name;
+        }
+
+        public List<Person> Persons = new List<Person>();
+        public void SendNewsPaper(NewsPaper newsPaper)
+        {
+            Persons.ForEach(Person => Person.GetNewsPaper(newsPaper));
+
+            var p1 = new Person("a");
+            p1.GetNewsPaper(newsPaper);
+        }
+    }
+    public class NewsPaper
+    {
+        public string Title { get; set; }
+
+        public string Content { get; set; }
+
+    }
 
 }
