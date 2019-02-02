@@ -473,7 +473,7 @@ namespace DashBorad
             publisher.Persons.Add(new Person("a"));
             publisher.Persons.Add(new Person("b"));
             publisher.Persons.Add(new Person("c"));
-
+            //
             publisher.SendNewsPaper(new NewsPaper() { Title="标题",Content="内容"});
             
             Console.ReadLine();
