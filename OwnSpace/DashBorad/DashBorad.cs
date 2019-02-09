@@ -425,7 +425,7 @@ namespace DashBorad
 
     //    public static void Main(string[] args)
     //    {
-    //        var list = Traverse(new List<int > { 17,2,37,4,59,656,7,8,967,0},IsEven);
+    //        var list = Traverse(new List<int> { 17, 2, 37, 4, 59, 656, 7, 8, 967, 0 }, IsEven);
 
     //        foreach (var n in list)
     //        {
@@ -437,13 +437,13 @@ namespace DashBorad
     //        Console.ReadLine();
     //    }
 
-    //    public delegate bool Function(int num );  // 委托     定义形式
+    //    public delegate bool Function(int num);  // 委托     定义形式
 
     //    public static Function BiggerThan10 = delegate (int n) { return n >= 10; };  //取大于10 的数
 
-    //    public static Function IsEven = delegate (int n) { return n%2==0; };        //取偶数
+    //    public static Function IsEven = delegate (int n) { return n % 2 == 0; };        //取偶数
 
-    //    public static List<int>  Traverse(List<int> nums,Function function)   //封闭
+    //    public static List<int> Traverse(List<int> nums, Function function)   //封闭
     //    {
     //        var list = new List<int>();
 
@@ -461,70 +461,91 @@ namespace DashBorad
     //}
 
     #endregion
+    #region 多波委托
+    //public class Proogram
+    //{
 
-    //多波委托
+    //    public static void Main(string[] args)
+    //    {
+    //        var publisher = new Publisher("出版社x");
+    //        publisher.Persons.Add(new Person("a"));
+    //        publisher.Persons.Add(new Person("b"));
+    //        publisher.Persons.Add(new Person("c"));
+    //        //
+    //        publisher.SendNewsPaper(new NewsPaper() { Title = "标题", Content = "内容" });
 
-    public class Proogram
+    //        Console.ReadLine();
+    //    }
+    //}
+
+    //public class Person
+    //{
+    //    public string Name { get; set; }
+
+    //    public Person(string name)
+    //    {
+    //        this.Name = name;
+    //    }
+    //    public NewsPaper NewsPaper { get; set; }
+
+    //    public void GetNewsPaper(NewsPaper newsPaper)
+    //    {
+    //        this.NewsPaper = newsPaper;
+    //    }
+    //}
+
+    //public class Publisher
+    //{
+    //    public string Name { get; set; }
+
+    //    public Publisher(string name)
+    //    {
+    //        this.Name = name;
+    //    }
+
+    //    public List<Person> Persons = new List<Person>();
+    //    public void SendNewsPaper(NewsPaper newsPaper)
+    //    {
+    //        Persons.ForEach(Person => Person.GetNewsPaper(newsPaper));
+
+    //        var p1 = new Person("a");
+    //        p1.GetNewsPaper(newsPaper);
+    //    }
+    //}
+
+    //public class NewsPaper
+    //{
+    //    public string Title { get; set; }
+
+    //    public string Content { get; set; }
+
+    //}
+    #endregion
+
+    public class Program
     {
-
-        public static void Main(string[] args) 
+        public static void Main(string[] args)
         {
-            var publisher = new Publisher("出版社x");
-            publisher.Persons.Add(new Person("a"));
-            publisher.Persons.Add(new Person("b"));
-            publisher.Persons.Add(new Person("c"));
-            //
-            publisher.SendNewsPaper(new NewsPaper() { Title="标题",Content="内容"});
-            
+            int i = 2;
+            //调用
+            DateTime dt = GetDate(i);
+
+            Console.WriteLine(dt);
+
+
             Console.ReadLine();
+
         }
 
+        public static DateTime GetDate(int num)
+        {
+            if (num==1)
+            {
+                return DateTime.Now;
+            }
+
+            return DateTime.Now.AddDays(-1);
+        }
 
     }
-    public class Person
-    {
-        public string Name{get; set;}
-
-        public Person(string name)
-        {
-            this.Name = name;
-        }
-        public NewsPaper NewsPaper { get; set; }
-
-        public void GetNewsPaper(NewsPaper newsPaper)
-        {
-            this.NewsPaper = newsPaper;
-        }
-
-
-    }
-
-   
-
-    public class Publisher
-    {
-        public string Name { get; set; }
-
-        public Publisher(string name)
-        {
-            this.Name = name;
-        }
-
-        public List<Person> Persons = new List<Person>();
-        public void SendNewsPaper(NewsPaper newsPaper)
-        {
-            Persons.ForEach(Person => Person.GetNewsPaper(newsPaper));
-
-            var p1 = new Person("a");
-            p1.GetNewsPaper(newsPaper);
-        }
-    }
-    public class NewsPaper
-    {
-        public string Title { get; set; }
-
-        public string Content { get; set; }
-
-    }
-
 }
